@@ -10,9 +10,9 @@ HEIGHT = 20
 next_cells = []
 
 for x in range(WIDTH):
-    column = [] # creates new columns
+    column = [] # create a new column
     for y in range(HEIGHT):
-        if random.randint(0,1) == 0:
+        if random.randint(0,1) == 0: # creates a random pattern of living cells
             column.append('#') # adds living cell
         else:
             column.append('') # adds dead cell
@@ -67,3 +67,11 @@ while True: # main program loop
             else:
                 next_cells[x][y] = '' # everything else dies or stays dead
     time.sleep(1)    #add 1 second pause
+
+    # ideas to add on
+
+    """
+    Counter for how many iterations this should run for
+    manipulation to change the height and width parameters
+    accept user input from the command line
+    """
