@@ -57,3 +57,13 @@ while True: # main program loop
                 num_neighbors += 1 # bottom neighbor is alive
             if current_cells[right_coordinate][below_coordinate] == '#':
                 num_neighbors += 1 # bottom right neighbor is alive
+
+            #set cell based on game of life rules
+
+            if current_cells[x][y] == '#' and (num_neighbors == 2 or num_neighbors == 3):
+                next_cells[x][y] = '#' # living cells with 2 or 3 neighbors stay alive
+            elif current_cells[x][y] == '' and num_neighbors == 3:
+                next_cells[x][y] = '#' # dead cells with 3 neighbors become alive
+            else:
+                next_cells[x][y] = '' # everything else dies or stays dead
+    time.sleep(1)    #add 1 second pause
