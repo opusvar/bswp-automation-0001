@@ -24,14 +24,19 @@ import random
 
 def coin_flip_simulation():
     number_of_streaks = 0
-    set_of_100 = []
     
-    for experiment_number in range(10_000):
-        set_of_100.append(random.randint(0, 1))
-    
-    return set_of_100
-
-
+    for experiment_outcomes in range(10_000):
+        set_of_100 = []
+        while len(set_of_100) < 100:
+            set_of_100.append(random.randint(0, 1))
+        else:
+            print("100 values added to set_of_100. Value count:", len(set_of_100))
+            return set_of_100
 
 print(coin_flip_simulation())
+
+
+
+
+
     
